@@ -12,3 +12,7 @@
 - [chongzia](https://www.patreon.com/user/creators?u=10094916)
 - [TorakikiSan](https://github.com/TorakikiSan)
 - [Walter Sassano](https://www.patreon.com/user/creators?u=15332698)
+- [Interactivity](https://interactivity.com.ua)
+- [Matthew Bezuidenhout](https://www.patreon.com/user/creators?u=20614229)
+- [Marcel Wehrstedt](https://www.patreon.com/user/creators?u=16353488)
+- [ProJee](https://www.patreon.com/user/creators?u=33581561)

@@ -1,3 +1,475 @@
+### 4.3.10
++ [x] Input: add API method `setAutocompleteList(array|string)`, issue #1576
++ [x] Scrollbars: add styles with classes `.scrollbar-type-1`, `.scrollbar-type-2`, `.scrollbar-type-3`, `.scrollbar-type-4`
++ [x] NavView: fix pane close on mobile devices when inputs, inside a pane, receive a focus, issue #1580
++ [x] NavView: add now caption for navview-menu for compacted mode dsplayed on the left of icon when user hovering item
++ [x] Grid: fix offset-*-0 are missing in the grid system, issue #1583
++ [x] Grid: add gaps with classes `gap-*`, where `*` is one of `0, 8, 16, 24, 32, 40` in pixels
++ [x] NavView: fix scrolling menu in compact mode, issue #1579
++ [x] NavView: add API method `toggleMode()` to toggle between expanded and compacted modes, issue #1538
++ [x] Select: for API method `data(newOptions, selected, delimiter)` added second argument. Must be a `string` or `array`, if `selected` is a `string`, you can use `delimiter` argument to split string into array, issue #1497
+
+### 4.3.9
++ [x] Component: `_fireEvent` push `__this` to arguments. `__this` contains HTMLElement
++ [x] Utils: fix function `github()` for executing callback
++ [x] Counter: fix for starting when page scrolls 
++ [x] Counter: add attributes `data-from`, `data-prefix`, `data-suffix`. Prefix and suffix must be a plain text.
++ [x] Observer: add firing event `attrchange` when component attribute was ben changed. `e.detail` contains an object `{attr, newValue, oldValue, __this}`.
++ [x] General: add firing event `hotkeybonded` when hotkey for component was ben bonded. `e.detail` contains an object `{__this, hotkey, fn}`.
++ [x] General: all components fired event `create` when init. The `e.detail` contains an object `{name, __this}`. 
++ [x] General: the document fired event `component-create` when a component was ben initialized. The `e.detail` contains an object `{element, name}`.
++ [x] Window: fix `makeRuntime` calling, issue #1574 
++ [x] Window: fix make window `resizable` 
++ [x] Typography: add `italic` and `underline` text classes, issue #1577
+
+### 4.3.8
+#### M4Q
++ [x] Animation: fixed using String.includes for IE11. Change to String.indexOF
++ [x] Animation: add operator `/` to `_getRelativeValue()`
++ [x] Events: fix `fire`. Now main is constructor `CustonEvent`, for old - `createEvent`
++ [x] Manipulation: add method `wrap`, `wrapAll`, `wrapInner`. The method puts elements inside the wrapper and return `wrapper(s)`
++ [x] Init: change `throw Error` to `console.warn` when selector is `#` or `.`
++ [x] setImmediate: add support for `process` and `web workers` 
+
+#### Metro 4
++ [x] General: new module system. All components now defined as alone IIFE modules.
++ [x] Validator: fixed functions `compare`, `equals`, `notequals` to work not inside a form, issue #1542
++ [x] Rtl: remove `form-rtl`, `accordion-rtl` less files. RTL Styles moved to component style.
++ [x] Locales: added `pt-BR` Brazilian Portuguese language
++ [x] Toast: added method `Metro.createToast()`. This eq to `Metro.toast.create()`
++ [x] Components: event `on[Component]Create` now have context a `HTMLElement` and receive `$(HTMLElement)` as argument
++ [x] Keypad: fix Keypad backspace button click behavior on `keypad`, created at `runtime`, issue #1547
++ [x] Utils: improve function `isType`
++ [x] Utils: remove functions `camelCase()`, `dashedName()`. Use `String.camelCase` or `$.camelCase()` and `String.dashedName())` or `$.dashedName()`.
++ [x] Clock: add events `onTick`, `onSecond`
++ [x] String: add extensions `includes()`, `camelCase()`, `dashedName()`, `shuffle()`
++ [x] Array: add extensions `includes()`
++ [x] ListView: fixed event `onNodeDblclick`, issue #1453
++ [x] Ribbon menu: fix hovering when button disabled, issue #1551
++ [x] Components: new constructor function
++ [x] Colors: full refactoring, now its full equals to `ColorJS`
++ [x] ColorType: new custom type for `color` variable. Var can be defined as `var c = new Color(...)` or `var c = new Metro.Color(...)` 
++ [x] Material Tabs: update to work in all browsers 
++ [x] Animation: redesign module
++ [x] Animation: add effects `zoom`, `swirl`
++ [x] Tiles: remove prefix `animate-*` for values for attribute `data-effect`   
++ [x] Core: removed meta attribute `metro4:init:mode`. Now Metro is **ALWAYS** initialized after the content has been loaded.
++ [x] IE: removed file `ie.less`. Styles moved to components styles.
++ [x] ListView: add method `selectByAttribute(attrName, attrValue, true|false)` for select/deselect items, issue #1554
++ [x] Template: new component. This component allows you to use javascript templates inside HTML elements.
++ [x] Table: fix using wrapper for `skip`, issue #1557
++ [x] Calendar picker: fix using attribute `clsPrepend`, issue #1558
++ [x] Toast: add new arguments format `Metro.createToast(message, options)`. Where `options` is a `plain object`.
++ [x] Draggable: add attribute `dragContext`, you can set it for access to any object with drag events, issue #1565
++ [x] Window: add second argument `context` for events `onDragStart`, `onDragStop`, `onDragMove`, issue #1565
++ [x] Calendar picker: fix work in `dialog-mode`
++ [x] Tabs: fix work attribute `clsTabsListItemActive`, issue #1568
++ [x] Locales: add danish locale `da-DK`, issue #1570
+
+
+### 4.3.7
+#### M4Q
++ [x] Animation: a new engine for animation. The `animate` function changed. Now function receives one argument. Also, you can use old syntax :)
++ [x] Init: fix minor bug for creating elements in context
++ [x] Ajax: add parameter `contentType`. If this param has value `false`, `Content-type` can't be defined.
++ [x] Contains: add checks with `:visible` to method `is`. Example: `$(...).is(':visible')`
++ [x] Utils: add methods `$.random(array | a, b)`, `$.getUnit(a)`, `$.strip(where, what)`, `$.hasProp(obj, prop)`, `$.dashedName(val)` 
++ [x] Classes: add method `$(...).removeClassBy(mask)`
+
+#### Metro 4
++ [x] Source: reposition source code
++ [x] Builder: new builder config, and new builder version `2020.1`. New version not compatibility with 4.3.6
++ [x] Input: fix append size and padding, issue #1512
++ [x] Ripple: added ripple call for any element, issue #1515
++ [x] Splitter: added event `onResizeWindow`. Setup this event with prop `data-on-resize-window` or event `$(...).on('resizewindow', ...)`, issue #1516
++ [x] Table: add `skip to page` functionality, issue #1511
++ [x] Table: add attributes `data-show-skip`, `data-table-skip-title`, `data-skip-wrapper`, `data-cls-table-skip`, `data-cls-table-skip-input`, `data-cls-table-skip-button`
++ [x] Table: add event `data-on-skip`
++ [x] Common css: optimize `lists`, `reset`
++ [x] UtilsJS: improve `isFloat` function, issue #1518
++ [x] Icons: add `whatsapp` icon, issue #1510 
++ [x] AudioButton: add new component for the button with role `audio-button`
++ [x] Select: fix `prepend`, `append` for `input-small`, `input-large`. With `multiple`, `append` and `prepend` will not displayed.
++ [x] Input: fix `prepend`, `append` for `input-small`, `input-large`. Issue #1522
++ [x] Counter: fix start if element already in viewport
++ [x] CSS: added `metro-reset.css`, `metro-common.css`, `metro-components.css` as standalone.
++ [x] Image magnifier: fix glass image when user resize original image
++ [x] Notifies: minor improve notify create method 
++ [x] Donut: update for using new `animate` function to draw `stroke-dasharray`
++ [x] Counter: update for using new `animate` function to draw
++ [x] File: fix clear when user fire `reset` on form in `drop` mode, issue #1524
++ [x] Adblock: a new component for hunting on the ads blockers 
++ [x] Core: refactoring for new component definition
++ [x] Audio: rename component to `audio-player`
++ [x] Video: rename component to `video-player`
++ [x] Calendar: minor upd for action buttons
++ [x] i18n: refactoring definition. Now each lang defined in own file
++ [x] Third party: third party components styles `select2`, `datatables` move to components and include to main
++ [x] Container: remove prop `display: block`
++ [x] Select: add using empty value for `option`, issue #1527
++ [x] Action button: fix sub actions position 
++ [x] Additional colors: refactoring
++ [x] Utils: remove method `random`, to get random value from an array or two values, use `$.random(array | a, b)` from `m4q`
++ [x] Utils: remove method `uniqueID`, to get unique GUID, use `$.uniqueID(prefix)` from `m4q`
++ [x] Utils: remove method `formData`, to get form data as array, use `$.serializeToArray(form)` from `m4q` and `$.serialize(form)` to get stringify value with `&` divider
++ [x] Utils: remove method `strToArray`, to transform string to array, use String.prototype method `String.prototype.toArray(delimiter, type, format)`
++ [x] Utils: remove method `callback`, execute function or code, use method `Utils.exec(fn, args, context)`
++ [x] Sidebar: add attribute `data-menu-scrollbar="true|false"`. Attribute enable or disable scrollbar in the sidebar menu, issue #1528
++ [x] Tag: new component. Used in `tag-input`, `select`, can be used as standalone.
++ [x] Ribbon menu: fix sizes and positions for `ribbon-icon-button`, `ribbon-tool-button` 
++ [x] Menus: removed `text-decoration` for anchors (`a`) inside any types of menus
++ [x] Cookie: new class for cookie manipulation `Metro.cookie`. Contains methods: `setCookie()`, `getCookie()`, `delCookie()` 
++ [x] Cookie disclaimer: new component for accept cookies for GDPR, and not only, issue #1530
++ [x] Metro icon font: add 65 new icons `cross-light`, `document-file-*` (64)
++ [x] Select: improved performance for creating options, issue #1534
++ [x] Select: remove dependency from `d-menu`
++ [x] Navview: add scrollable to `navview-menu` in `compacted` mode
+
+### 4.3.6
+##### M4Q
++ [x] M4Q: upd to `1.0.6`
++ [x] M4Q Init: fix minor bug for creating elements in context
++ [x] M4Q Ajax: add parameter `contentType`. If this param has value `false`, `Content-type` can't be defined.
+
+##### Metro 4
++ [x] ColorJS: fix functions `RGB`, `RGBA`
++ [x] Select: add focus state, issue #1488
++ [x] Checkbox: add focus state
++ [x] Radio: add focus state
++ [x] Select: add attribute `data-cls-drop-container`
++ [x] Dropdown: add `important` to `.drop-left`, `.drop-right`, `.drop-up` classes
++ [x] Table: add support `formatMask` for fields defined in table head `thead`
++ [x] ResetCSS: remove duplicate declarations
++ [x] Toast: add global setup. Related to issue #1493
++ [x] Streamer: now you can set event time up to a minute
++ [x] Streamer: now you can use for event size `half` and `one-third` constants
++ [x] Streamer: add events `onDrawEvent`, `onDrawGlobalEvent`, `onDrawStream` 
++ [x] TreeView: fix attribute `data-show-child-count`
++ [x] CalendarPicker: add attribute `data-value` to set init input value, issue #1506
++ [x] Streamer: `data-wheel` now true by default
++ [x] Streamer: add attribute `data-wheel-step` to define scroll step for horizontal scrolling with mouse
++ [x] Streamer: fix horizontal scrolling with mouse. 
+
+### 4.3.5
+##### M4Q
++ [x] M4Q: upd to `1.0.5`
++ [x] M4Q Events: fix firing events, Metro 4 issue #1476
++ [x] M4Q Events: optimize method `trigger`, now this is a synonym of `fire`
+
+##### Metro 4
++ [x] Tag input: change `trigger` defining 
++ [x] Tag input: add `clear button` with attributes `clearButton`, `clsClearButton`, `clearButtonIcon`  
++ [x] Tag input: add attributes `clsComponent`, `clsInput`  
++ [x] Tag input: add event `onClear`  
++ [x] List: add attribute `data-sort-initial` to sorts on create component, issue #1475
++ [x] Tag input: add attribute `data-static` and static mode for `data-static='true'` or if present attribute `readonly`
++ [x] Tag input: add method `toggleStatic([true|false])`
++ [x] Select: fix clearing `select-input`, issue #1477
++ [x] Calendar picker: fix closing calendar when user click on overlay, issue #1478
++ [x] Select: fix styles for `input-large`, `input-small` classes
++ [x] Tag input: change `keyup` to `keydown` for tag trigger event
++ [x] Tag input: add event `onTagTrigger`  
++ [x] Tag input: add removing last tag on current value is empty end user press `Backspace`, you can disable it with attribute `data-backspace='false'`
++ [x] Draggable: add attribute `data-timeout` for set timeout before creating component
++ [x] Components: creating components can be deferred with attribute `data-[componentName]-deferred=[ms]`. Example: `<div data-role='draggable' data-draggable-deferred='2000'>...</div>`
++ [x] Counter: add attribute `data-start-on-viewport`. If attribute value is `true`, counter started after element showed in viewport. You can combine this with `data-timeout`
++ [x] Select: fix bug with `data-filter='false'` 
++ [x] File: fix method `clear` for mode `dropzone`
++ [x] Select: add mode `button`
+
+### 4.3.4
+##### M4Q
++ [x] M4Q: upd to `1.0.4`
++ [x] M4Q Manipulation: optimise `append`, `prepend` to one definition for IE
++ [x] M4Q Script: add `$.script`, `$.fn.script` to execute scripts from element or create script object
++ [x] M4Q Manipulation: `$.fn.append`, `$.fn.prepend` now support script tag processing
++ [x] M4Q Clone: now support cloning `data` if second argument `withData`is `true` - `$(el).clone(true, true)`
++ [x] M4Q Events: now you can define event name with `hyphen` or in `camelCase` notation. Example: `mouse-down`, `accordionCreate`
++ [x] M4Q Ajax: fix handler for sending data
++ [x] M4Q Ajax: fix `$.json` if returned value can't be parsed
++ [x] M4Q Ajax: fix `post` for `object`
++ [x] $: add $.serializeToArray(form), $serialize(form)
++ [x] M4Q Events: fixed `removeEventListener`
+
+##### Metro 4
++ [x] Animations: put animations to separate less/css file `metro-animations`
++ [x] Object animations: add `.flip-card`
++ [x] Object animations: add `.post-card`
++ [x] Inputs: change placeholder `font-size` to `14px`, add `text-ellipsis`
++ [x] Utils CSS: add class `.stop-pointer`
++ [x] Role naming: you can now use a hyphen to separate words in verbose component names for the data-role attribute. Example: `data-role='button-group''` and `data-role='buttongroup''` are equivalent.
++ [x] Drag Items: add new component, issue #1336
++ [x] Table: fix `viewPath` for getting `view` from server
++ [x] Table: fix colspan for message `emptyTableTitle`
++ [x] Checkbox: add using attribute `readonly`
++ [x] Switch: add using attribute `readonly`
++ [x] Table: fix `viewPath` for saving `view` on server
++ [x] Animation CSS: relocation
++ [x] AppBar: fix `app-bar-menu` behavior when user resize a window
++ [x] Slider: fix hint for IE11
++ [x] Window: fix interop m4q and jquery for `Metro.window.create()`
++ [x] Splitter: fix for IE11
++ [x] AppBar: add events `onMenuOpen`, `onMenuClose`, `onMenuExpand`, `onMenuCollapse`
+
+### 4.3.3
++ [x] m4q: upd to 1.0.3
++ [x] Toast: fix calculating toast position
++ [x] Progress: fix global setup function name
++ [x] Progress: percent value. To show set attribute `data-show-value="true"`, `data-value-position="free|center"`
++ [x] Progress: add label. Use attributes `data-show-label="true|false"`, `data-label-position="before|after"`, `data-label-template="Value is %VAL%"`
++ [x] InfoBox: fix interop with Metro 4 and jQuery
++ [x] Table: add method `clear()`, issue #1426 
++ [x] Table: fix cell data wrapping with attribute `data-cell-wrapper="true"`
++ [x] File: fix Input file inconsistent display when user cancel the choose dialog, issue #1443
++ [x] Slider: fix using accuracy with  decimal value, issue #1447  
++ [x] Calendar Picker: add attribute `data-show-week-number`
++ [x] Gravatar: fix global setup method name
++ [x] Activity: fix method `open` for undefined options
++ [x] Activity: fix interop with Metro 4 and jQuery
++ [x] Dialog: fix interop with Metro 4 and jQuery for dialog create method
++ [x] AppBar: set `max-height` for `app-bar-menu` opened with `hamburger` to visible viewport
++ [x] Buttons: refactoring - split to separate components from one file
++ [x] Calendar Picker: fix dialog mode, issue #1450
++ [x] Common CSS: add class `-disabled`
++ [x] General: Now `Metro4` init after content was loaded. If you need to switch to old init method, use `metro4:init:mode` with value `immediate`
++ [x] Double Slider: add new component, issue #1441  
++ [x] InfoButton: fix position and `display` change from `inline-flex` to `inline-block`, issue #1451
++ [x] M4Q Events: improve method `on`
++ [x] Select: fix for ie11, issue #1452
++ [x] ListView: add callback for `onNodeDblClick` event, issue #1453
++ [x] Table: add show activity when data loaded
++ [x] Table: you can set data with JS object and attribute `data-source`. Value for attribute must be a object name.
+
+### 4.3.2
++ [x] Slider: fix vertical slider marker position when slider is not visible, thx to [thinkcpu](https://github.com/thinkcpu), PR #1417
++ [x] Slider: improve events
++ [x] HotKey: extended anchor work with `data-hotkey` and attr `href`, issue #1420  
++ [x] M4Q Events:  fix `function.name` property for IE11, issue #1425
++ [x] Table: add methods `addItem([...], redraw)`, `addItems([...], redraw)`, issue #1426
++ [x] Select: attribute `data-cls-drop-list` now override default class `d-menu` if defined
++ [x] Lists: if list has class attribute, it resets with `margin: 0; padding: 0; list-style: none inside;` 
++ [x] Select: if option not has value, used option text for value
++ [x] Table: add event `onDataSaveError`
++ [x] Table: fix save view to server
++ [x] M4Q Ajax: fix creating additional headers for request, issue #1427
++ [x] Init: add meta tag `metro4:init:mode`. The value must be `immediate` or `contentloaded`, default - `immediate`. If value is `contentloaded` and meta tag `metro4:init` not equal  `false`, Metro 4 will be initiate after the content was loaded.
++ [x] Table: now you can define `decimalSeparator` and `thousandSeparator` in table head and global
++ [x] Table: add attributes `data-head` (object name, define table header), `data-body` (object name, define table data)
++ [x] Table: add attribute `data-static`. If `true`, search, pagination, info, rows count will be disabled and will not showing.
++ [x] Splitter: add method `size(str)` for change panel sizes at runtime, add observing for attribute `data-split-sizes` for change panel sizes at runtime
++ [x] Carousel: improve slide switching 
++ [x] TreeView: add trigger `change` for checkboxes
++ [x] Common: fix `h-auto-*`
+
+### 4.3.1
++ [x] Interop: fix interop with Metro4 and jQuery, issue #1408
++ [x] m4q: upd to 1.0.1
++ [x] m4q: fix initialization when `metro4` added into `head`
++ [x] Init: fix issue #1409
++ [x] Dropdown: fix interop between Metro4 and jQuery, issue #1411
++ [x] Select: fix interop between Metro4 and jQuery, issue #1412
++ [x] Panel: fix interop between Metro4 and jQuery
++ [x] Windows: fix interop between Metro4 and jQuery
++ [x] VideoPlayer: fix interop between Metro4 and jQuery
++ [x] AudioPlayer: fix interop between Metro4 and jQuery
++ [x] Hotkey: fix interop between Metro4 and jQuery
++ [x] TimePicker: fix interop between Metro4 and jQuery
++ [x] SideBar: fix interop between Metro4 and jQuery
++ [x] Charms: fix interop between Metro4 and jQuery
++ [x] Select: fix close when user click document and jQuery used
++ [x] CalendarPicker: fix interop between Metro4 and jQuery, fix close when `next[Year, Month]` clicked
++ [x] Select: add works with disabled option. You can add attr `disabled` to option to create disabled option, issue #1413
++ [x] Window: fix toggle draggable, resizeable
++ [x] Tile: fix tile width in then `tiles-grid` when tile placed in specific column
++ [x] Metro: fix observing attributes
+
+### 4.3.0
++ [x] jQuery: Goodbye!!!
++ [x] M4Q: now built in for DOM manipulation and animation
++ [x] Keypad: rename property `data-length` to `data-key-length`
++ [x] Slider: fix show/hide hint 
++ [x] Typo: fix `margin-top` for lists inside a lists, ex: `ul > ul` 
++ [x] Animation: fix `fadeIn`, `fadeOut`
++ [x] NavView: rename attribute `data-expanded` to `data-expand`
++ [x] Examples: upd `start screen`
++ [x] Calendar picker: fix using locale for initial value, issue #1376
++ [x] Typo: set line-height for paragraph to 1.5
++ [x] Table: fire event onDataLoaded before table build
++ [x] Dialog: fix hide method
++ [x] File: add method "clear"
++ [x] Source: structure refactoring
++ [x] Typography: add background to `remark` with `accent` color 
++ [x] Tests: begin tests with `cypress`
++ [x] Draggable: minor improve for `mouseMove` 
++ [x] Chat: add attribute `data-readonly` and method `toggleReadonly`
++ [x] Schemes: fix colors for table `tfoot`
++ [x] Add `checkRuntime` to components
++ [x] Table: add attributes `data-empty-table-title`, `data-cls-empty-table-title` for issue #1403
++ [x] Table: fix padding for sortable columns
++ [x] Add `destroy` method to components. This method remove all event handlers and return core element
++ [x] Select: add props `data-add-empty-value` (default: false), `data-empty-value` (default: empty string)
++ [x] Select: add prop `data-placeholder`
++ [x] Select: add prop `data-clear-button` (default: false)
++ [x] Grid: optimise styles
++ [x] Hint: fix remove on leave element
++ [x] TreeView: add attribute `data-show-child-count`
+
+### 4.2.49
++ [x] Select: extended to interop with role=dropdown
++ [x] Docs: upd docs for cards, add `icon-box`, `more-info-box`, `skill-box`, `social-box`
++ [x] Sidebar: fix setup global function name
++ [x] Textarea: fix issue #1400
++ [x] MaterialTabs: fix issue #1402 
++ [x] MaterialTabs: add method `open(tab_num)` for issue #1399
++ [x] Select: fix input autofocus when dropdown
++ [x] Textarea: fix resize when component was created
++ [x] File: fix firing `change` event on Safari
+
+### 4.2.48
++ [x] Select: fix error when using with pair to Select from Metro 4 for React
++ [x] Carousel: moved style props for slide background image from js to css
++ [x] Input: add attribute `data-exclaim` for defining exclamation symbol
++ [x] Input: fix no display clear button when input is readOnly 
++ [x] Textarea: fix no display clear button when input is readOnly 
+ 
+### 4.2.47
++ [x] Input: fix triggering `change` event, add trigger event `clear` when clear button is pressed
++ [x] Accordion: fixed glitch for frames who must be closed, but initiated as open 
+
+### 4.2.46
++ [x] Table: fixed format value for sorting when value is empty, null or undefined
++ [x] Dropdown: fix set open on init
++ [x] DatePicker: add observation for attribute `data-locale` 
++ [x] DatePicker: add observation for attribute `data-format`
++ [x] Utils: upd func `isLocalhost`
++ [x] Windows: fix make runtime   
++ [x] Dialog: fix make runtime   
++ [x] InfoBox: fix make runtime
++ [x] Validator: fix validating for `integer` and `float` rules, issue #1388 
++ [x] Builder: fix builder `config`  
++ [x] Embed objects: set default width and height to `100%`
+
+### 4.2.45
++ [x] Calendar picker: fix initial value for i18n
++ [x] Typography: set `line-height: 1.5` for `p` 
++ [x] Examples: fix desktop demo
++ [x] Examples: fix start screen demo
++ [x] Notify system: fix minor bug for creating notify after setup
+
+### 4.2.44
++ [x] Calendar: fix methods `setMaxDate`, `setMinDate`, issue #1374
++ [x] Datepicker: fix offset for timezones, issue #1372
++ [x] Datepicker: fix `val()` method 
+
+### 4.2.43
++ [x] Inputs: add class `.input-small` for using with `input`, `select`, `spinner`, `tag-input`, `keypad`, `file` , issue #1245
++ [x] Events: upd docs for subscribing events with `$.on` and `addEventListener()`
++ [x] Panel: new method `customButtons()` for add custom buttons at runtime
++ [x] Table: add `margin-top: 1rem` for class `.table`
++ [x] Lists: add `margin-top: 1rem` for `ul`, `ol`, `dl`
++ [x] Hotkey: full refactoring
++ [x] Datepicker: add attribute `data-input-format`
++ [x] Datepicker: fix hours timezone offset
++ [x] Datepicker: now you can use attribute `value` to setup component date
++ [x] Pickers: change default scroll speed factor to `4` 
++ [x] Window: fix methods `setContent`, `setTitle`, `setIcon`, `changePlace`
++ [x] Utils: rename method `isJQueryObject` to `isJQuery`
++ [x] Utils: add methods `isM4Q`, `isQ`. Method `isQ` return one of `isJQuery` or `isM4Q`
++ [x] Streamer: fix scrolling with `apple magic mouse` and `firefox`
++ [x] Streamer: fix scroll position for `events-area` when source changed
++ [x] TreeView: fix confused calls `expandNode` and `collapseNode` events
++ [x] Dialog: add attribute `data-actions` for predefined dialog
++ [x] DatePicker: fix scroll event handler
++ [x] TimePicker: fix scroll event handler
++ [x] Tabs material: add event `data-on-tabs-scroll`
++ [x] ScrollEvents: plugin for `scrollStart`, `scrollStop` events was removed
++ [x] Mousewheel: plugin was removed
+ 
+### 4.2.42
++ [x] General: improved components initialization
++ [x] Hotkeys: now you can add or change `hotkey` at runtime
++ [x] Select: fix cyclic error when `Uncaught ReferenceError: function is not defined` for `onchange` event
++ [x] Card: add class `flex-card` to create card in flex model
++ [x] ListView: fix works methods with jQuery object and\or HTMLElement
++ [x] Streamer: add event `data-on-events-scroll` 
++ [x] Streamer: fix method `source` 
++ [x] Streamer: rename method `data` to `dataSet` 
++ [x] TreeView: fix methods for add nodes, issue #1150
+
+### 4.2.41
++ [x] List: add event `data-on-data-load-error`
++ [x] List: add item template with property `template`
++ [x] Table: add item template with property `template` and value wrapper `this.cellValue`
++ [x] Pagination: add function `Metro.pagination`
++ [x] Templates: now you can change `begin` and `end` template symbols with third argument `{beginToken, endToken}`
++ [x] Html container: add attributes `data-method`, `data-request-data`
++ [x] Html container: change name of events to `data-on-html-load`, `data-on-html-load-fail`, `data-on-html-load-done`
++ [x] Typography: change `line-height` for `p`, `.text-leader`, `.text-leader2` to `1.2` 
++ [x] Charm: add event `data-on-toggle`.
++ [x] Chat: fix error for time manipulation, issue #1355
++ [x] Master: add events `data-on-next-page`, `data-on-prev-page`
++ [x] Events extensions: Now you can subscribe to all table events with `$.on()` or `addEventListener()`
++ [x] Wizard: add events `data-on-next-page`, `data-on-prev-page`, `data-on-first-page`, `data-on-last-page`, `data-on-finish-page`
++ [x] Global setup: add using global object `metro{ComponentName}Setup` to set up all components on the page with own global options set.
++ [x] Resizable: fix toggle `canResize` property   
++ [x] Calendar picker: fix width for calendar wide
++ [x] Slider: change events to `startAll`, `moveAll`, `stopAll`
++ [x] Streamer: add events `data-on-data-load`, `data-on-data-loaded`, `data-on-data-load-error` 
++ [x] Streamer: fix methods `changeSource`, `changeData`
++ [x] Streamer: add property `row` for event
++ [x] Streamer: add property `html` for event with custom html
+
+### 4.2.40
++ [x] Chat: new component
++ [x] Boxes: add new boxes `skill-box`, `social-box`, `more-info-box`
++ [x] NavView: add behavior for show submenu on left from main menu for compacted mode
++ [x] Cards: add default background color `white`
++ [x] Cards: fix flex model for image header
++ [x] Colors: change `op-*` alpha value from `0.7` to `0.1`
++ [x] Dropdown: if element has class `open`, it will be open after initialization
++ [x] Show metro4 about in console: added meta parameter `metro4:about`. Thanks to [Ken Kitay](https://github.com/kens-code)
++ [x] Metro4 Events: added constants `Metro.events.startAll`, `Metro.events.stopAll`, `Metro.events.moveAll`. Constants contains both mouse and touch.
++ [x] Clock: upd component, PR #1341, Thanks to [Ken Kitay](https://github.com/kens-code)
++ [x] Sidenav simple: optimize css
++ [x] Sidenav counter: optimize css
++ [x] File: call trigger `change` when user drop files into drop area
++ [x] Form: Add default styling for `input[type=submit]`, `input[type=reset]`, `input[type=button]`.   
++ [x] Rating: add half value for static with attribute `data-half="true"`
++ [x] Headlines: add `margin-top` to `display*`, `h1-h5` and `.h1-.h5`
++ [x] Panel: add `text-ellipsis` to `caption`
++ [x] Table: add methods: `updateItem(key, field, value)`, `getIndex()`, `rebuildIndex()`, `getItem(key)`
++ [x] Table: store item data in row. Now you can use `tr.data('original')` to get table row original data
++ [x] Table: store cell data in cell. Now you can use `td.data('original')` to get cell original data
++ [x] Table: fix incorrect work service radio buttons
++ [x] Select: remove `margin-bottom`
++ [x] Blockquote: rename class `place-right` to `right-side` for right side quote
++ [x] Lists: fix list style position for ordered list
++ [x] Dropdown: add service class `stay-open`. When an element has this class, an element can't be closed when the user clicks on the document.
++ [x] Collapse: change default animation duration to `100ms`
++ [x] Tiles: set cover default position to `center center`
++ [x] Tiles: add attribute for image slide `data-cover-position`
++ [x] Timepicker: set default value for `data-scroll-speed` to `1`
++ [x] Datepicker: set default value for `data-scroll-speed` to `1`
++ [x] Countdown: change behavior when browser tab lost focus or invisible
++ [x] Countdown: fix zoom effect
++ [x] Countdown: fix minor bug when first tick (not critical)
++ [x] Dialog: change padding for dialog title to `12px 24px`
++ [x] Dialog: add predefined accent classes `primary`, `alert`, `info`, `warning`, ...
++ [x] InfoBox: add predefined accent classes `primary`, `alert`, `info`, `warning`, ...
++ [x] Elements colors: optimize less for using `each` function
++ [x] Additional colors: optimize less for using `each` function
++ [x] Element: add class `.accent-block` for using with accent colors classes `primary`, `alert`, `info`, `warning`, ...
++ [x] Dialog: add close button to top left corner with attribute `data-close-button`
++ [x] Video: fix show/hide controls when mouse enter leave
++ [x] Video: fix show controls in full screen mode with attribute `data-full-screen-mode="desktop"`
++ [x] Draggable: fix minor bug for draggable windows
++ [x] Sidenav M3: fix item height with text overflow
++ [x] Sidenav M3: remove floating for `d-menu`
++ [x] Dropdown: add attribute `data-drop-filter`. Filtering elements on closing.
++ [x] Select: Opening a select now closes only other selects.
++ [x] Accordion: add drop marker. Marker can disabled with attribute `data-show-marker="false"`
++ [x] Accordion: fix frames open on accordion init
+
 ### 4.2.39
 + [x] NavView: minor improve styling 
 + [x] NavView: add method `pullClick()` for emulate pull button click at runtime 
