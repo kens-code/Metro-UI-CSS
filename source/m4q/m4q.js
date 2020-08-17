@@ -1,5 +1,5 @@
 /*
- * m4q v1.0.7, (https://github.com/olton/m4q.git)
+ * m4q v1.0.8, (https://github.com/olton/m4q.git)
  * Copyright 2018 - 2020 by Sergey Pimenov
  * Helper for DOM manipulation, animation, and ajax routines.
  * Licensed under MIT
@@ -604,7 +604,7 @@ function hasProp(obj, prop){
 
 /* global hasProp */
 
-var m4qVersion = "v1.0.7. Built at 16/06/2020 10:44:43";
+var m4qVersion = "v1.0.8. Built at 06/08/2020 18:05:15";
 
 /* eslint-disable-next-line */
 var matches = Element.prototype.matches
@@ -3856,14 +3856,14 @@ $.extend({
     hide: function(el, cb){
         var $el = $(el);
 
-        if (el.style.display) {
-            $el.origin('display', (el.style.display ? el.style.display : getComputedStyle(el, null).display));
-        }
+        $el.origin('display', (el.style.display ? el.style.display : getComputedStyle(el, null).display));
         el.style.display = 'none';
+
         if (typeof cb === "function") {
             $.bind(cb, el);
             cb.call(el, arguments);
         }
+
         return this;
     },
 
@@ -4258,6 +4258,7 @@ $.fn.extend({
 
 $.init = function(sel, ctx){
     var parsed, r;
+    var that = this;
 
     this.uid = $.uniqueId();
 
@@ -4315,24 +4316,37 @@ $.init = function(sel, ctx){
 
     if (typeof sel === "string") {
 
-        sel = sel.trim();
+        if (sel[0] === "@") {
 
-        if (sel === "#" || sel === ".") {
-            console.warn("Selector can't be # or .") ;
-            return this;
-        }
+            $("[data-role]").each(function(){
+                var roles = $(this).attr("data-role").split(",").map(function(v){
+                    return (""+v).trim();
+                });
+                if (roles.indexOf(sel.slice(1)) > -1) {
+                    that.push(this);
+                }
+            });
 
-        parsed = $.parseHTML(sel, ctx);
-
-        if (parsed.length === 1 && parsed[0].nodeType === 3) { // Must be a text node -> css sel
-            [].push.apply(this, document.querySelectorAll(sel));
         } else {
-            $.merge(this, parsed);
+            sel = sel.trim();
+
+            if (sel === "#" || sel === ".") {
+                console.warn("Selector can't be # or .") ;
+                return this;
+            }
+
+            parsed = $.parseHTML(sel, ctx);
+
+            if (parsed.length === 1 && parsed[0].nodeType === 3) { // Must be a text node -> css sel
+                [].push.apply(this, document.querySelectorAll(sel));
+            } else {
+                $.merge(this, parsed);
+            }
         }
+
     }
 
     if (ctx !== undefined) {
-        var that = this;
         if (ctx instanceof $) {
             this.each(function () {
                 $(ctx).append(that);

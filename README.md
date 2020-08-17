@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://metroui.org.ua/v4/">
-    <img src="https://metroui.org.ua/images/logo4.png" alt="">
+  <a href="https://metroui.org.ua/">
+    <img src="https://metroui.org.ua/res/images/metro4-hero.png" alt="">
   </a>
 
   <h3 align="center">Metro 4 Components Library</h3>
@@ -28,9 +28,9 @@ It's an independent project with its ongoing development made possible entirely 
 </a>
 </p>
 <br>
-<hr>
- 
-### Status
+
+----
+
 [![Build Status](https://travis-ci.org/olton/Metro-UI-CSS.svg?branch=master)](https://travis-ci.org/olton/Metro-UI-CSS)
 ![Dependencies](https://img.shields.io/badge/Dependencies-none-darklime.svg)
 [![CSS gzip size](http://img.badgesize.io/olton/Metro-UI-CSS/master/build/css/metro-all.min.css?compression=gzip&label=CSS+gzip)](https://github.com/olton/Metro-UI-CSS/blob/master/build/css/metro-all.min.css)
@@ -45,18 +45,32 @@ It's an independent project with its ongoing development made possible entirely 
 ![GitHub issues](https://img.shields.io/github/issues-raw/olton/Metro-UI-CSS.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/olton/Metro-UI-CSS.svg)
 
-### Donation
-![Donations on Patreon](https://img.shields.io/badge/Patreon-$100-red.svg)
+----
+
+## License and Premium Features
+[![dual license](https://github.com/xscode-resources/promotion-materials/blob/master/assets/Dual-license-badge.gif?raw=true)](https://xscode.com/olton/Metro-UI-CSS)
+
+As of **version 4.4.0**, this project is licensed under the **GPLv3** license.
+An **MIT** licensed version is available for an annual subscription [here](https://xscode.com/olton/Metro-UI-CSS) and for **Patrons** on [Patreon](https://www.patreon.com/metroui?fan_landing=true).
+In addition to the permissive license, paying users will receive **ongoing priority support** for any issue that might arise by my personal email **serhii@pimenov.com.ua**.
+> Subscribers and Patrons will get access to my special Metro 4 repo with MIT license.
+
+### Donation on Patreon
+![Donations on Patreon](https://img.shields.io/badge/Patrons-4-green.svg)
+![Donations on Patreon](https://img.shields.io/badge/Donation-$100-red.svg)
 
 ### Community
 
 [![Join the chat at https://discord.gg/NydRab3](https://img.shields.io/badge/chat-on%20discord-brightgreen.svg?style=flat)](https://discord.gg/NydRab3)
 [![Join the chat at https://gitter.im/metro4/Lobby](https://badges.gitter.im/metro4/Lobby.svg)](https://gitter.im/metro4/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
+## Contributing
+All contributions are welcome. <br> Learn more about how you can contribute to this project
+ [here](CONTRIBUTING.md).
+ 
 ### Docs
 
- Documentation and Demo: [metroui.org.ua](https://metroui.org.ua/)   
+Please click [here](https://metroui.org.ua/) for Documentation and Demo.   
 
 ### Releases
 
@@ -68,37 +82,10 @@ The usual frequency of release of the new version is one week on Sundays.
 If your current version of Metro 4 works for you, you can stay on it for as long as you'd like. 
 If you want to make use of new features as they come in you should upgrade to a newer version.
 
-### Credits
-- Styles created using the [less](http://lesscss.org) preprocessor by  [Alexis Sellier](https://github.com/cloudhead)
-- preCode by Leon Sorokin [preCode](https://github.com/leeoniya/preCode.js)
-- strftime by Tom Doan [strftime](https://github.com/thdoan/strftime)
-- function b64toBlob by [Jeremy Banks](http://stackoverflow.com/users/1114/jeremy-banks)
-- Date.getWeek by [Nick Baicoianu](http://www.epoch-calendar.com)
-- Swipe component based on [Matt Bryson](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)  TouchSwipe plugin
-- All who brought something good 
-- Thank you jQuery and Goodbye!
-
 ### Browser Compatibility
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)
 --- | --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | 9.1+ ✔ | Latest ✔ |
-
-### Cross-browser Testing
-Cross-browser Testing Platform and Open Source Provided by [Sauce Labs](https://saucelabs.com).
-Sauce Labs ensures your favorite mobile apps and websites work flawlessly on every browser, operating system, and device.
-<p>
-<a href="https://saucelabs.com"><img src="https://metroui.org.ua/images/Sauce-Labs_Horiz_Red-Grey_RGB_200x28.png" width="200"></a>
-</p>
-
-Cross-browser Testing Platform Provided by [BrowserStack](https://www.browserstack.com/).
-Seamless experience by testing on 2000+ real devices and browsers.
-<p>
-<a href="https://www.browserstack.com/"><img src="https://metroui.org.ua/images/Browserstack-logo.svg" width="200"></a>
-</p>
-
-### License
-
-Metro 4 has [MIT License](https://github.com/olton/Metro-UI-CSS/blob/master/LICENSE)
 
 ### Old version
 Metro UI CSS 3.x you can find in a repo [Metro-UI-CSS-3](https://github.com/olton/Metro-UI-CSS-3)     
@@ -112,6 +99,9 @@ Metro UI CSS 0.x you can find in a repo [Metro-UI-CSS-095](https://github.com/ol
 ### Thanks
 Thanks to all. Special thanks to all those who financially supported the project.    
 
-### Testers
-Thanks to all who a [testing](https://github.com/olton/Metro-UI-CSS/blob/master/TESTERS.md) a project. 
+### Credits
+You can read about credits [here](CREDITS.md)
 
+---
+
+2012-2020 © Copyright by Serhii Pimenov. All Rights Reserved. Created by Serhii Pimenov.

@@ -62,25 +62,23 @@
         },
 
         open: function(){
-            var element = this.element, o = this.options;
+            var element = this.element;
 
             element.addClass("open");
 
-            Utils.exec(o.onOpen, null, element[0]);
-            element.fire("open");
+            this._fireEvent("open");
         },
 
         close: function(){
-            var element = this.element, o = this.options;
+            var element = this.element;
 
             element.removeClass("open");
 
-            Utils.exec(o.onClose, null, element[0]);
-            element.fire("close");
+            this._fireEvent("close");
         },
 
         toggle: function(){
-            var element = this.element, o = this.options;
+            var element = this.element;
 
             if (element.hasClass("open") === true) {
                 this.close();
@@ -88,8 +86,7 @@
                 this.open();
             }
 
-            Utils.exec(o.onToggle, null, element[0]);
-            element.fire("toggle");
+            this._fireEvent("toggle");
         },
 
         opacity: function(v){

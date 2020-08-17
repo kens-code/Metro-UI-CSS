@@ -1,6 +1,7 @@
 /* global Metro */
 (function(Metro, $) {
     'use strict';
+    var Utils = Metro.utils;
     var SwitchDefaultConfig = {
         switchDeferred: 0,
         material: false,
@@ -30,7 +31,7 @@
 
         _create: function(){
             var element = this.element, o = this.options;
-            var container = $("<label>").addClass((o.material === true ? " switch-material " : " switch ") + element[0].className);
+            var container ;
             var check = $("<span>").addClass("check");
             var caption = $("<span>").addClass("caption").html(o.caption);
 
@@ -42,10 +43,15 @@
                 })
             }
 
-            container.insertBefore(element);
-            element.appendTo(container);
+            container = element.wrap(
+                $("<label>").addClass((o.material === true ? " switch-material " : " switch ") + element[0].className)
+            );
+
             check.appendTo(container);
             caption.appendTo(container);
+
+            if (element.attr("data-on")) check.attr("data-on", element.attr("data-on"));
+            if (element.attr("data-off")) check.attr("data-off", element.attr("data-off"));
 
             if (o.transition === true) {
                 container.addClass("transition-on");
@@ -67,9 +73,7 @@
                 this.enable();
             }
 
-            this._fireEvent("switch-create", {
-                element: element
-            });
+            this._fireEvent("switch-create");
         },
 
         disable: function(){
@@ -88,6 +92,18 @@
             } else {
                 this.enable();
             }
+        },
+
+        toggle: function(v){
+            var element = this.element;
+
+            if (!Utils.isValue(v)) {
+                element.prop("checked", !Utils.bool(element.prop("checked")));
+            } else {
+                element.prop("checked", v === 1);
+            }
+
+            return this;
         },
 
         changeAttribute: function(attributeName){

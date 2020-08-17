@@ -1,3 +1,26 @@
+### 4.4.0
+#### M4Q
++ [x] M4Q: upd to 1.0.8 
++ [x] M4Q Constructor: add short-tag for selecting by `data-role` with `$('@rolename')` 
++ [x] M4Q Visibility: fix method `hide` for detecting initial `display` value
+
+#### Metro 4
++ [x] Components: switch to `Component._fireEvent(...)` method for firing component events `data-on-*` 
++ [x] Calendar: add firing event `onMonthChange` when user clicks on outside day, issue #1589
++ [x] Window: add API methods `pos(top, left)`, `top(v)`, `left(v)`, `width(v)`, `height(v)`, issue #1590
++ [x] Metro.window: add methods `pos(top, left)`, `top(v)`, `left(v)`, `width(v)`, `height(v)`
++ [x] Switch: add `data-on`, `data-off` attributes to show switch text state
++ [x] Checkbox: add API method `toggle( state )`. The `state` must be `-1` (indeterminate), `0` (unchecked), `1` (checked) or `undefined` (toggle between checked and unchecked), issue #1586 
++ [x] Switch: add API method `toggle( state )`. The `state` must be `0` (unchecked), `1` (checked) or `undefined` (toggle between checked and unchecked), issue #1586
++ [x] Double slider: fix right-hand button moves when grabbing the left-hand hint, issue #1591
++ [x] Window: added property `attr` to custom button definition. This attribute must be a `object` with pairs `key: value` where `key` - attribute name, `value` - attribute value, issue #1592
++ [x] Input: added property `attr` to custom button definition
++ [x] Panel: added property `attr` to custom button definition
++ [x] Lightbox: new component to create a modal image gallery
++ [x] ImageGrid: new component to create a simple beautiful image grid
++ [x] Draggable: add attribute `data-boundary-restriction="true|false"`, issue #1595
++ [x] Tokenizer: new component to create tokenized text
+
 ### 4.3.10
 + [x] Input: add API method `setAutocompleteList(array|string)`, issue #1576
 + [x] Scrollbars: add styles with classes `.scrollbar-type-1`, `.scrollbar-type-2`, `.scrollbar-type-3`, `.scrollbar-type-4`
@@ -24,7 +47,7 @@
 
 ### 4.3.8
 #### M4Q
-+ [x] Animation: fixed using String.includes for IE11. Change to String.indexOF
++ [x] Animation: fixed using String.includes for IE11. Changed to `String.indexOf`
 + [x] Animation: add operator `/` to `_getRelativeValue()`
 + [x] Events: fix `fire`. Now main is constructor `CustonEvent`, for old - `createEvent`
 + [x] Manipulation: add method `wrap`, `wrapAll`, `wrapInner`. The method puts elements inside the wrapper and return `wrapper(s)`
